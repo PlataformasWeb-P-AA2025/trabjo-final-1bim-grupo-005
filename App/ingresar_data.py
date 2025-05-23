@@ -37,13 +37,25 @@ with open(csv2, mode='r', encoding='utf-8', newline='') as csvfile:
 
 
 csv3 = "../DATA/publicaciones_liga_premier.csv"
-with open(csv2, mode='r', encoding='utf-8', newline='') as csvfile:
+with open(csv3, mode='r', encoding='utf-8', newline='') as csvfile:
     csv_reader = csv.reader(csvfile)
     next(csv_reader)
-    
+    usuario = Usuario(nombre="Premier League")
+    session.add(usuario)
+
     for row in csv_reader:
-        usuario = Usuario(nombre="Premier League")
-        session.add(usuario)
         publicacion = Publicacion(usuario=usuario, publicacion=row[0])
         session.add(publicacion)
+    session.commit()
+
+csv4 = "../DATA/usuario_publicacion_emocion.csv"
+with open(csv4, mode= 'r', encoding='utf-8', newline='') as csvfile:
+    csv_reader = csv.reader(csvfile, delimiter='|')
+    next(csv_reader)
+
+    for row in csv_reader:
+        usuario = session.query(Usuario).filter(Usuario.nombre==row[0].strip()).one()
+        publicacion = session.query(Publicacion).filter(Publicacion.publicacion==row[1]).first()
+        reaccion = Reaccion(usuario=usuario, publicacion=publicacion, tipo_emocion=row[2])
+        session.add(reaccion)
     session.commit()

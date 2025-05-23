@@ -6,7 +6,6 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from configuracion import cadena_base_datos
 
 engine = create_engine(cadena_base_datos)
-
 Base = declarative_base()
 
 class Usuario(Base):
@@ -42,8 +41,8 @@ class Publicacion(Base):
 class Reaccion(Base):
     __tablename__= "reaccion"
     id = Column(Integer, primary_key=True)
-    usuario_id = Column(Integer, ForeignKey('usuario.id'), primary_key=True)
-    publicacion_id = Column(Integer, ForeignKey('publicacion.id'),primary_key=True)
+    usuario_id = Column(Integer, ForeignKey('usuario.id'))
+    publicacion_id = Column(Integer, ForeignKey('publicacion.id'))
     tipo_emocion = Column(String())
 
 
