@@ -35,13 +35,15 @@ with open(csv2, mode='r', encoding='utf-8', newline='') as csvfile:
         session.add(publicacion)
     session.commit()
 
-csv23 = "../DATA/publicaciones_liga_premier.csv"
+
+csv3 = "../DATA/publicaciones_liga_premier.csv"
 with open(csv2, mode='r', encoding='utf-8', newline='') as csvfile:
-    csv_reader = csv.reader(csvfile, delimiter="|")
+    csv_reader = csv.reader(csvfile)
     next(csv_reader)
     
     for row in csv_reader:
-        usuario = session.query(Usuario).filter(Usuario.nombre==row[0].strip()).one()
-        publicacion = Publicacion(usuario=usuario, publicacion=row[1])
+        usuario = Usuario(nombre="Premier League")
+        session.add(usuario)
+        publicacion = Publicacion(usuario=usuario, publicacion=row[0])
         session.add(publicacion)
     session.commit()

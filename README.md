@@ -76,3 +76,12 @@ class Reaccion
 ## En caso de usar IA-Generativa para consulta de información
 
 - En un archivo llamado informacion.md; explicando a detalle el uso de cada prompt
+
+
+## Realizado hasta ahora
+
+Trabajamos con la extension liveshare de visual code que nos permite programar en una sola pc 
+
+Primero analizamos los csv y vimos que atributos puede tener cada clase
+
+En cuanto al trabajo definimos las relaciones de las tablas de la base de datos con sus atributos correspondientes cabe recalcar que para esta parte la fuimos desarrallando en base a el ejemplo que usted nos dio en clase, despues realizamos un script para el ingreso de datos y publicaciones, ahora estamos desarrollando la de publicaciones de la liga premier.
