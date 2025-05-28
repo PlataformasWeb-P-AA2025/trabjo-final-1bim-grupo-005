@@ -85,3 +85,7 @@ Trabajamos con la extension liveshare de visual code que nos permite programar e
 Primero analizamos los csv y vimos que atributos puede tener cada clase
 
 En cuanto al trabajo definimos las relaciones de las tablas de la base de datos con sus atributos correspondientes cabe recalcar que para esta parte la fuimos desarrallando en base a el ejemplo que usted nos dio en clase, despues realizamos un script para el ingreso de datos y publicaciones, ahora estamos desarrollando la de publicaciones de la liga premier.
+
+INGENIERO UTILIZAMOS IA PARA GENERAR LOS ENUNCIADOS DE LAS 2 ULTIMAS PREGUNTAS PERO EL DESARROLLO DE LAS MISMAS FUE HECHA POR NOSOTROS 
+Y PARA LA PREGUNTA 5 EN LA CUAL HAY 2 RESPUES LA PRIMERA ES GENERADA POR LA IA Y LA SEGUNDA LA 5.1 ES LA QUE NOSOTROS LA DESARROLLAMOS TOMAMOS DE REFERENIA LA QUE NOS AYUDO A IA
+
