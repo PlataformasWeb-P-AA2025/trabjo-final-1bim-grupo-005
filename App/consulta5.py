@@ -12,29 +12,8 @@ engine = create_engine(cadena_base_datos)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-#1
-listar_publicaciones = session.query(Publicacion).join(Usuario).filter(Usuario.nombre == "Premier League").all()
+#5Listar todas las reacciones de tipo "alegre", "enojado", "pensativo" que sean de usuarios que cuyos nombre no inicien con vocal.
 
-print("Usuario: Premier League")
-for p in listar_publicaciones:
-    print(f"Publicacion: {p.publicacion}")
-#2
-listar_reacciones = session.query(Reaccion).join(Publicacion).filter(Publicacion.publicacion == "Bruno Fernandes del Liverpool fue expulsado por doble amarilla en el debut de la temporada." ).all()
-print("Publicacion: Bruno Fernandes del Liverpool fue expulsado por doble amarilla en el debut de la temporada.")
-for r in listar_reacciones:
-    print(f"Reacciones: {r.tipo_emocion}")
-#3
-listar_reacionesXusuario = session.query(Publicacion).join(Reaccion).all()
-for u in listar_reacionesXusuario:
-    print(f"Publicacion: {u.publicacion}")
-#4
-
-# https://stackoverflow.com/questions/14754994/why-is-sqlalchemy-count-much-slower-than-the-raw-query
-reporte_reacciones_cantidad = session.query(Reaccion.tipo_emocion,func.count(Reaccion.id)).group_by(Reaccion.tipo_emocion).all()
-for r in reporte_reacciones_cantidad:
-    print(f"Reaccion: {r[0]} -> Cantidad: {r[1]}")
-
-#5
 emociones = ["alegre","enojado","pensativo"]
 
 listar_reacciones_like = session.query(Reaccion).join(Usuario) \
